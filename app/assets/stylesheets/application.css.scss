@@ -16,3 +16,17 @@
 @import "bourbon";
 @import "neat";
 
+.container {
+	@include outer-container;
+	.row {
+		@include span-columns(11);
+		@include omega;
+		.small_column {
+			@include span-columns(3);
+		}
+		.large_column {
+			@include span-columns(4);
+		}
+	}
+}
+
