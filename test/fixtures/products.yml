@@ -19,10 +19,11 @@ two:
   active: false
 
 valid_order_for_bob:
-  name:               Test Image Pack
+  name:               Test Image Pack Valid
   description:        Collection of test images
   price:              0
   image_url:          test-image.jpg
-  availability_date:  2014-12-01
+  availability_date:  2014-10-01
   category:           free
   active:             true
+

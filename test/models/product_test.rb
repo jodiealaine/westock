@@ -15,7 +15,7 @@ class ProductTest < ActiveSupport::TestCase
   end
 
   test "product price must be zero or greater" do 
-  	product = Product.new(name: 							"Test Image Pack",
+  	product = Product.new(name: 							"Test Image Pack 2",
   												description: 				"Collection of test images",
   												image_url: 					"test-image.png",
   												availability_date: 	2014-12-01,
@@ -34,13 +34,13 @@ class ProductTest < ActiveSupport::TestCase
   end
 
   def new_product(image_url)
-  	product = Product.new(name: 							"Test Image Pack",
-  												description: 				"Collection of test images",
-  												price: 							0,
-  												image_url:          image_url, 
-  												availability_date: 	2014-12-01,
-  												category: 					"free",
-  												active: 						true)
+  	Product.new(name: 							"Test Image Pack 1",
+								description: 				"Collection of test images",
+								price: 							0,
+								image_url:          image_url, 
+								availability_date: 	2014-12-01,
+								category: 					"free",
+								active: 						true)
   end
   test "image_url" do 
   	ok  = %w{ test.gif test.jpg test.png test.GIF test.JPG test.PNG http://a.b.c/x/y/z/test.gif}
@@ -51,5 +51,17 @@ class ProductTest < ActiveSupport::TestCase
   	bad.each do |name|
   		assert new_product(name).invalid?, "#{name} shouldn't be valid"
   	end
+  end
+
+  test "product is not valid without a unique name" do
+  	product = Product.new(name: 							products(:valid_order_for_bob).name,
+  												description: 				'Photos',
+  												image_url:    			'bob.jpg', 
+  												price: 							1,
+  												availability_date:  '2014-10-01',
+  												category:           'paid',
+  												active:             true)
+  	assert product.invalid?
+  	assert_equal ["has already been taken"], product.errors[:name]
   end
 end
