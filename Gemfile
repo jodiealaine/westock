@@ -26,6 +26,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Bourbon for Sass mixin library
 gem 'bourbon'
 
+# Use Neat for a grid framework
+gem 'neat'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
