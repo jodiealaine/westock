@@ -17,3 +17,12 @@ two:
   availability_date: 2014-11-18
   category: MyString
   active: false
+
+valid_order_for_bob:
+  name:               Test Image Pack
+  description:        Collection of test images
+  price:              0
+  image_url:          test-image.jpg
+  availability_date:  2014-12-01
+  category:           free
+  active:             true
