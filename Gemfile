@@ -29,9 +29,6 @@ gem 'bourbon'
 # Use Neat for a grid framework
 gem 'neat'
 
-# Use Bitters for Scaffold styles, variable and sructure for Bourbon projects
-gem 'bitters'
-
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
