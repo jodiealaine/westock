@@ -25,7 +25,7 @@ section {
 	@include outer-container;
 }
 
-.products {
+.products, .categories {
 	table {
 		border-collapse: collapse;
 	}

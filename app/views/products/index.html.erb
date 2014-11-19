@@ -11,10 +11,10 @@
                 <%= product.name %>
               </dt>
               <dd><%= truncate(strip_tags(product.description), length: 80) %></dd>
-              <dd><%= product.price %></dd>
-              <dd><%= product.availability_date %></dd>
-              <dd><%= product.category %></dd>
-              <dd><%= product.active %></dd>
+              <dd>Price: £<%= product.price %></dd>
+              <dd>Date Available: <%= product.availability_date %></dd>
+              <dd>Category: <%= product.category_id %></dd>
+              <dd>Active?: <%= product.active %></dd>
             </dl>
           </td>
           <td class="list_actions">
