@@ -11,18 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141119104244) do
+ActiveRecord::Schema.define(version: 20141119122035) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
     t.boolean  "active"
     t.boolean  "visible_on_homepage"
-    t.integer  "product_id"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
   end
-
-  add_index "categories", ["product_id"], name: "index_categories_on_product_id"
 
   create_table "products", force: true do |t|
     t.string   "name"
@@ -33,6 +30,9 @@ ActiveRecord::Schema.define(version: 20141119104244) do
     t.boolean  "active"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+    t.integer  "category_id"
   end
+
+  add_index "products", ["category_id"], name: "index_products_on_category_id"
 
 end
