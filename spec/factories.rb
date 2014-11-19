@@ -1,23 +1,18 @@
-Factory.define :category do |category|
-  category.name                  "Free"
-  category.active                true
-  category.visible_on_homepage   true
+FactoryGirl.define do 
+  factory :category do 
+    name                  "Free"
+    active                true
+    visible_on_homepage   true
+  end
+
+  factory :product do 
+    name              "Photo Pack 1"
+    description       "Description of photo pack 1"
+    image_url         "image.jpg"
+    price             10.00
+    availability_date "2014-08-08"
+    active            true
+    association       :category
+  end
 end
  
-Factory.define :product do |product|
-  product.name 							"Photo Pack 1"
-  product.description 			"Description of photo pack 1"
-  product.image_url 				"image.jpg"
-  product.price 						10.00
-  product.availability_date "2014-08-08"
-  active										true
-  product.association 			:category
-end
- 
-Factory.sequence :category_name do |n|
-  "#{n}"
-end
- 
-Factory.define :category do |c|
-  c.name  Factory.next :category_name
-end
